@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 810">
+  <rect width="1600" height="810" fill="#e7e6e2"/>
+  <rect x="120" y="100" width="1360" height="610" fill="#f5f4f0"/>
+  <path d="M120 610 L520 300 L800 540 L1090 220 L1480 610 L1480 710 L120 710 Z" fill="#d5d3cd"/>
+  <circle cx="1160" cy="275" r="95" fill="#c2c0b9"/>
+  <text x="800" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" letter-spacing="8" fill="#777">YOUR HERO IMAGE</text>
+  <text x="800" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" letter-spacing="4" fill="#999">REPLACE assets/hero-placeholder.svg</text>
+</svg>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruben James Hillier — Product Design Engineering portfolio and blog.">
+  <title>Ruben James Hillier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- =========================================================
+       LEFT NAVIGATION
+       Change your name and menu items here.
+       ========================================================= -->
+  <aside class="sidebar">
+    <a class="site-name" href="#home" data-route="home">
+      RUBEN<br>
+      JAMES<br>
+      HILLIER
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+
+      <button class="nav-parent" data-toggle="projects-menu">
+        PROJECTS <span class="arrow">+</span>
+      </button>
+      <div class="submenu" id="projects-menu">
+        <a href="#project-bike-rack" data-route="project-bike-rack">Bike Rack</a>
+        <a href="#project-product" data-route="project-product">Product Design</a>
+        <a href="#project-university" data-route="project-university">University Project</a>
+      </div>
+
+      <button class="nav-parent" data-toggle="blog-menu">
+        BLOG <span class="arrow">+</span>
+      </button>
+      <div class="submenu" id="blog-menu">
+        <a href="#blog-design-process" data-route="blog-design-process">Design Process</a>
+        <a href="#blog-making" data-route="blog-making">Making & Materials</a>
+        <a href="#blog-university" data-route="blog-university">University Notes</a>
+      </div>
+
+      <!-- CV is deliberately NOT a dropdown -->
+      <a class="nav-link" href="#cv" data-route="cv">CV</a>
+
+      <a class="nav-link" href="#about" data-route="about">ABOUT</a>
+      <a class="nav-link" href="#contact" data-route="contact">CONTACT</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>PRODUCT DESIGN ENGINEERING</span>
+      <span>2026</span>
+    </div>
+  </aside>
+
+
+  <!-- =========================================================
+       RIGHT-HAND CONTENT
+       JavaScript swaps this area when a navigation item is clicked.
+       ========================================================= -->
+  <main id="content" class="content">
+    <!-- Content is inserted by script.js -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

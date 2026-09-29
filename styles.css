@@ -1,0 +1,413 @@
+/* ============================================================
+   RUBEN JAMES HILLIER — PORTFOLIO
+   Plain CSS: no frameworks, no build tools.
+   Change the variables below to quickly alter the whole site.
+   ============================================================ */
+
+:root {
+  --background: #ffffff;
+  --text: #55565a;
+  --heading: #626368;
+  --muted: #8a8b8e;
+  --line: #e9e9e7;
+  --hover: #111111;
+
+  --sidebar-width: 30%;
+  --page-padding: 2.45rem;
+  --content-gap: 3rem;
+
+  --body-font: Arial, Helvetica, sans-serif;
+  --heading-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.035em;
+}
+
+/* ---------------- LEFT SIDEBAR ---------------- */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.site-name {
+  display: inline-block;
+  width: fit-content;
+  color: var(--heading);
+  text-decoration: none;
+  font-family: var(--heading-font);
+  font-size: clamp(1.65rem, 2.1vw, 2.7rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  margin-left: 0.08em;
+}
+
+.main-nav {
+  margin-top: 5.7rem;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.2rem;
+}
+
+.main-nav a,
+.nav-parent {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.17em;
+  padding: 0.15rem 0;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.main-nav a:hover,
+.nav-parent:hover,
+.main-nav a.active,
+.nav-parent.active {
+  color: var(--hover);
+}
+
+.nav-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 13px;
+  letter-spacing: 0;
+  transition: transform 160ms ease;
+}
+
+.nav-parent.open .arrow {
+  transform: rotate(45deg);
+}
+
+.submenu {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  padding-left: 0.8rem;
+  transition: grid-template-rows 220ms ease, opacity 180ms ease;
+}
+
+.submenu > * {
+  overflow: hidden;
+}
+
+.submenu.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin: 0.15rem 0 0.4rem;
+}
+
+.submenu a {
+  font-size: 10px;
+  padding: 0.15rem 0;
+  color: var(--muted);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  color: #aaa;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+
+/* ---------------- RIGHT CONTENT ---------------- */
+
+.content {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  padding: var(--page-padding) var(--page-padding) 5rem 0;
+}
+
+.page {
+  width: 100%;
+  max-width: 1400px;
+  animation: pageIn 280ms ease both;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home hero */
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 8.1;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+  background: #e7e6e2;
+}
+
+/*
+  EASY IMAGE CHANGE:
+  Replace assets/hero-placeholder.svg with your own image and
+  change the src in script.js to "assets/your-photo.jpg".
+*/
+
+.hero-caption {
+  padding: 0.8rem 0 0;
+  max-width: 850px;
+}
+
+.hero-caption h1,
+.page-title {
+  margin: 0 0 0.8rem;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  color: var(--heading);
+  text-transform: uppercase;
+}
+
+.hero-caption p {
+  margin: 0;
+  max-width: 1000px;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.read-more:hover {
+  color: #111;
+}
+
+/* Generic inner pages */
+
+.inner-page {
+  max-width: 1050px;
+}
+
+.inner-page .page-title {
+  margin-bottom: 2rem;
+}
+
+.lead {
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 800px;
+  color: var(--heading);
+  margin: 0 0 2.5rem;
+}
+
+.body-copy {
+  max-width: 760px;
+}
+
+.body-copy p {
+  margin: 0 0 1.3rem;
+}
+
+.meta {
+  color: #999;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+/* Project / blog cards */
+
+.project-grid,
+.blog-list {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #e7e6e2;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.card h2 {
+  margin: 0;
+  color: var(--heading);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card p {
+  margin: 0.45rem 0 0;
+  max-width: 600px;
+  font-size: 10px;
+}
+
+.blog-item {
+  padding: 0 0 1.7rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 900px;
+}
+
+.blog-item a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.blog-item h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blog-item p {
+  margin: 0.5rem 0 0;
+  max-width: 750px;
+}
+
+/* CV */
+
+.cv-section {
+  max-width: 850px;
+  border-top: 1px solid var(--line);
+  padding: 1.2rem 0 1.8rem;
+}
+
+.cv-section h2 {
+  margin: 0 0 0.8rem;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  padding: 0.2rem 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.back-link:hover {
+  color: #111;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 800px) {
+  :root {
+    --sidebar-width: 100%;
+    --page-padding: 1.2rem;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1.2rem;
+  }
+
+  .site-name {
+    font-size: 1.55rem;
+  }
+
+  .main-nav {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 0 var(--page-padding) 3rem;
+  }
+
+  .hero-image {
+    min-height: 260px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-row {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    margin-bottom: 0.8rem;
+  }
+}

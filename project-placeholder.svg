@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e7e6e2"/>
+  <rect x="120" y="110" width="960" height="680" fill="#f5f4f0"/>
+  <path d="M260 650 L470 330 L690 570 L850 390 L980 650 Z" fill="#d1cfc9"/>
+  <circle cx="620" cy="330" r="75" fill="#bbb9b2"/>
+  <text x="600" y="735" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" letter-spacing="5" fill="#777">PROJECT IMAGE</text>
+</svg>
