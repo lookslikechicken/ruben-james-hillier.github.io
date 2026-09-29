@@ -12,7 +12,7 @@
   --line: #e9e9e7;
   --hover: #111111;
 
-  --sidebar-width: 30%;
+  --sidebar-width: 27%;
   --page-padding: 2.45rem;
   --content-gap: 3rem;
 
@@ -44,7 +44,7 @@ body {
   position: fixed;
   inset: 0 auto 0 0;
   width: var(--sidebar-width);
-  padding: var(--page-padding);
+  padding: 2.45rem 2.45rem 2.45rem 4rem;
   display: flex;
   flex-direction: column;
   z-index: 10;
@@ -151,7 +151,7 @@ body {
 .content {
   margin-left: var(--sidebar-width);
   min-height: 100vh;
-  padding: var(--page-padding) var(--page-padding) 5rem 0;
+  padding: 2.45rem 2.45rem 5rem 0;
 }
 
 .page {
