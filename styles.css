@@ -101,16 +101,6 @@ body {
   align-items: center;
 }
 
-.arrow {
-  font-size: 13px;
-  letter-spacing: 0;
-  transition: transform 160ms ease;
-}
-
-.nav-parent.open .arrow {
-  transform: rotate(45deg);
-}
-
 .submenu {
   display: grid;
   grid-template-rows: 0fr;
@@ -126,7 +116,7 @@ body {
 .submenu.open {
   grid-template-rows: 1fr;
   opacity: 1;
-  margin: 0.15rem 0 0.4rem;
+  margin: 0.15rem 0 0rem;
 }
 
 .submenu a {
